@@ -1,13 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-import Alert from '../views/alert.vue'
-
 const routes = [
 
+
   {
-    path: '/alert',
-    name: 'alert',
-    component: Alert,
+    path: '/',
+    name: 'HomePage',
+    component: ()=> import('../views/homepage.vue'),
 
   },
   {
