@@ -1,10 +1,13 @@
 <template>
-<div class="bg-primary  w-screen h-screen flex justify-center items-center opacity-70">
+<div class="bg-lightenPrimary  w-screen h-screen flex justify-center items-center ">
 
-    <div class="container">
-<span class="text-secondary">
-    Hello worl[d ]
-</span>
+
+    <div class="container mx-auto px-4 flex flex-col justify-center items-center gap-5">
+<span class="text-5xl font-bold overflow-y-hidden text-center">Learn About Venture Capitalism <br> with  <br> Future capital</span>
+
+<button class="bg-primary hover:bg-green-700 text-white font-bold py-4 px-24 rounded-full mt-8">
+  Play
+</button>
     </div>
 
 </div>
@@ -12,7 +15,7 @@
 
 <script>
 export default {
-name:"HomePage"
+    name: "HomePage",
 }
 </script>
 

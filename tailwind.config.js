@@ -8,8 +8,9 @@ module.exports = {
      },
     colors:{
      primary:'#3CAC70',
+     lightenPrimary: '#3cac705c',
      secondary:'#FBBB07',
-     }
+     } 
    },
   },
   variants: {
