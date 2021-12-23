@@ -5,7 +5,7 @@
     <div class="container mx-auto px-4 flex flex-col justify-center items-center gap-5">
 
       <div v-for="(question, index) in questions" :key="question.question" class="shadow border-b-2 flex flex-col justify-start bg-gray-50 p-3 gap-5 w-full md:w-1/2">
-        <span class="text-2xl italic">{{question.Question}}</span>
+        <span class="text-2xl italic text-primary">{{index + 1}})  {{question.Question}}</span>
 
       <div v-for="option in question.Options" :key="option" class="flex items-center">
 <input  :id="option" v-model="questions[index].selected" :value="option" type="radio" :name="index" class="mr-3 w-5 h-5">
@@ -28,8 +28,8 @@
 
 <script>
 
-import {questions, score} from "../helpers/questions"
-import {empty, getEmptyIndexes} from "../helpers/functions"
+import {questions} from "../helpers/questions"
+import {empty, getEmptyIndexes, calScore} from "../helpers/functions"
 import { useRouter } from "vue-router"
 
 export default {
@@ -39,14 +39,18 @@ export default {
 
 const router = useRouter()
 
+
+
       const submit = ()=>{
         let selectedArr = questions.map((item)=> item.selected);
 console.log(getEmptyIndexes(selectedArr));
 console.log(empty(selectedArr));
 
 if(empty(selectedArr)){
+  getEmptyIndexes(selectedArr)
   alert("Please answer all the questions")
 }else{
+  calScore(selectedArr)
 router.push('/result')
 }
 

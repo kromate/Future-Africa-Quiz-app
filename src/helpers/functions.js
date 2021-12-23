@@ -1,4 +1,6 @@
- export   const empty=(arr)=> {
+import {questions, score} from "../helpers/questions"
+
+export   const empty=(arr)=> {
   return arr.indexOf("") !== -1;
 }
 
@@ -8,4 +10,14 @@ export const getEmptyIndexes=(arr) =>{
         indexes.push(i);
     }
     return indexes;
+}
+
+export const calScore = (selectedAnswers)=>{
+  score.value = 0
+selectedAnswers.map((item, index)=>{
+  if(item == questions[index].Answer){
+    score.value++
+  }
+
+})
 }

@@ -25,4 +25,4 @@ export const questions = [
     },
 ]
 
-export const score = ref('')
+export const score = ref(0)
