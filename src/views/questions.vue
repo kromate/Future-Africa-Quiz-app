@@ -28,14 +28,28 @@
 
 <script>
 
-import questions from "../helpers/questions"
+import {questions, score} from "../helpers/questions"
+import {empty, getEmptyIndexes} from "../helpers/functions"
+import { useRouter } from "vue-router"
+
 export default {
     name: "QuestionPage",
 
     setup(){
 
+const router = useRouter()
+
       const submit = ()=>{
-        console.log(questions.map((item)=> item.selected));
+        let selectedArr = questions.map((item)=> item.selected);
+console.log(getEmptyIndexes(selectedArr));
+console.log(empty(selectedArr));
+
+if(empty(selectedArr)){
+  alert("Please answer all the questions")
+}else{
+router.push('/result')
+}
+
       }
       return{
         submit,
